@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسأل وتعلم - المنصة التعليمية الرقمية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <!-- العنوان الرئيسي -->
+    <h1>اسأل وتعلم</h1>
+    <div class="welcome-message">
+        مرحباً بك! لا سؤال صغير، كل تعلم خطوة إلى الأمام.
+    </div>
+
+    <!-- تبويبات التنقل الرئيسية -->
+    <div class="nav-tabs">
+        <button class="nav-tab active" data-section="home">الرئيسية</button>
+        <button class="nav-tab" data-section="categories">التصنيفات</button>
+        <button class="nav-tab" data-section="add-question">اطرح سؤالاً</button>
+    </div>
+
+    <!-- قسم الرئيسية -->
+    <div id="home" class="content-section active">
+        <!-- شريط البحث -->
+        <div class="search-section">
+            <input type="text" id="searchInput" class="search-box" placeholder="ماذا تريد أن تتعلم اليوم؟" autocomplete="off">
+            <ul id="suggestionsList" class="search-suggestions"></ul>
+        </div>
+
+        <!-- الأسئلة الأكثر شيوعاً -->
+        <div class="popular-questions">
+            <h2>الأسئلة الأكثر شيوعاً</h2>
+            <ul class="question-list" id="popularQuestionsList">
+                <!-- يتم تعبئتها من JavaScript -->
+            </ul>
+        </div>
+
+        <!-- رسالة تشجيع -->
+        <div class="encouragement">
+            التكنولوجيا سهلة حين تتعلمها خطوة بخطوة.
+        </div>
+    </div>
+
+    <!-- قسم التصنيفات -->
+    <div id="categories" class="content-section">
+        <h2>تصفح حسب التصنيف</h2>
+        <div class="categories-grid" id="categoriesContainer">
+            <!-- يتم إنشاؤها من JavaScript -->
+        </div>
+        <div id="categoryQuestionsList" style="margin-top: 30px;"></div>
+    </div>
+
+    <!-- قسم إضافة سؤال جديد -->
+    <div id="add-question" class="content-section">
+        <h2>اطرح سؤالاً جديداً</h2>
+        <div class="add-question-form">
+            <div class="form-group">
+                <label for="newQuestionTitle">ما هو سؤالك؟</label>
+                <input type="text" id="newQuestionTitle" placeholder="اكتب سؤالك بوضوح...">
+            </div>
+            <div class="form-group">
+                <label for="newQuestionDetails">تفاصيل إضافية (اختياري)</label>
+                <textarea id="newQuestionDetails" rows="3" placeholder="اشرح المزيد عن سؤالك..."></textarea>
+            </div>
+            <button class="btn btn-large" id="submitQuestionBtn">إرسال السؤال</button>
+            <p style="margin-top: 20px; color: #3A5A78;">سيُراجع فريقنا سؤالك وتُضاف الإجابة قريباً.</p>
+        </div>
+        <div id="addQuestionMessage" class="encouragement" style="display: none;"></div>
+    </div>
+
+    <!-- قسم عرض الإجابة (يظهر عند اختيار سؤال) -->
+    <div id="answerSection" style="display: none;">
+        <button class="btn btn-secondary" id="backToHomeBtn" style="margin-bottom: 20px;">العودة للأسئلة</button>
+        <div class="answer-panel">
+            <h2 class="answer-title" id="answerQuestionTitle"></h2>
+            <div class="answer-summary" id="answerSummary"></div>
+            <div id="answerSteps"></div>
+            <div class="golden-tip" id="answerTip"></div>
+            
+            <!-- تقييم الإجابة -->
+            <div class="feedback-section">
+                <span style="font-size: 1.4rem;">هل ساعدتك هذه الإجابة؟</span>
+                <button class="rating-btn" id="rateYesBtn">نعم، أفادتني</button>
+                <button class="rating-btn" id="rateNoBtn">لا، أحتاج مساعدة أكثر</button>
+            </div>
+            <div id="feedbackMessage" style="margin-top: 15px; font-size: 1.2rem;"></div>
+        </div>
+    </div>
+
+    <!-- تذييل -->
+    <div class="footer">
+        منصة اسأل وتعلم © 2025 — جميع الحقوق محفوظة
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
